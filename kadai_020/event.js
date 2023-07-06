@@ -1,9 +1,14 @@
-const textElement = 
-document.getElementById('text');
-const newText = 'ボタンをクリックしました';
+document.addEventListener('DOMContentLoaded', () => {
+  const targetElement = 
+  document.getElementById('text');
+  const buttonElement = 
+  document.getElementById('btn');
 
-//2秒後切替
-setTimeout (() => {
-  textElement.innerText=newText;
-},2000);
+  function handleClick() {
+    setTimeout(() => {
+      targetElement.textContent = 'ボタンをクリックしました';
+    }, 2000);
+  }
 
+buttonElement.addEventListener('click',handleClick);
+});
